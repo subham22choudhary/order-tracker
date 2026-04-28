@@ -42,7 +42,7 @@ export default function RiderPanel() {
 
     return (
         <div className="panel">
-            <h2>🛵 Rider Panel</h2>
+            <h2>Rider Panel</h2>
 
             <label>Order ID</label>
             <input
@@ -73,11 +73,11 @@ export default function RiderPanel() {
 
             {currentStatus && (
                 <p className="status-display">
-                    ✅ Status set to: <strong>{STATUS_LABELS[currentStatus]}</strong>
+                    Status set to: <strong>{STATUS_LABELS[currentStatus]}</strong>
                 </p>
             )}
 
-            {error && <p className="error">⚠️ {error}</p>}
+            {error && <p className="error">{error}</p>}
         </div>
     );
 }
