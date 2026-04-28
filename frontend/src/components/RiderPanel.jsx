@@ -10,6 +10,13 @@ const STATUS_LABELS = {
     delivered: "Delivered",
 };
 
+const STATUS_CLASSNAMES = {
+    pending: "pendingcta",
+    picked_up: "pickupcta",
+    out_for_delivery: "dlvrycta",
+    delivered: "deliveredcta",
+};
+
 export default function RiderPanel() {
     const [orderId, setOrderId] = useState("");
     const [token, setToken] = useState("rider-secret-token-123");
@@ -57,7 +64,7 @@ export default function RiderPanel() {
                         key={s}
                         onClick={() => handleSetStatus(s)}
                         disabled={loading}
-                        className={currentStatus === s ? "active" : ""}
+                        className={`${STATUS_CLASSNAMES[s]} ${currentStatus === s ? "active" : ""}`}
                     >
                         {STATUS_LABELS[s]}
                     </button>
