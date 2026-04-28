@@ -87,6 +87,7 @@ export default function CustomerPanel() {
                             </div>
                         ))}
                     </div>
+
                     <p className="updated">
                         Last updated: {new Date(orderData.updatedAt).toLocaleTimeString()}
                     </p>
