@@ -3,7 +3,6 @@ const router = express.Router();
 const { getOrder, updateOrder, isValidStatus } = require("../store");
 const authMiddleware = require("../middleware/auth");
 
-// POST /api/orders/:orderId/status  (Rider updates status)
 router.post("/:orderId/status", authMiddleware, (req, res) => {
     const { orderId } = req.params;
     const { status } = req.body;
@@ -33,7 +32,6 @@ router.post("/:orderId/status", authMiddleware, (req, res) => {
     return res.status(200).json({ orderId, ...order });
 });
 
-// GET /api/orders/:orderId/status  (Customer checks status)
 router.get("/:orderId/status", (req, res) => {
     const { orderId } = req.params;
     const order = getOrder(orderId);
