@@ -38,6 +38,3 @@ npm test
 - Add JWT-based auth instead of hardcoded token
 - Add more unit/integration tests
 - Deploy via Docker Compose
-
-
-Vercel Live Testing URL: https://mos-tracker.vercel.app/

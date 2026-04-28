@@ -1,5 +1,4 @@
-# Order Status Tracker
-
+# Mini Order Status (Mos) Tracker
 A real-time order tracking system with a Rider Panel and Customer Panel.
 
 ## How to Run Locally
@@ -31,6 +30,7 @@ npm test
 - In-memory store resets on server restart (no DB)
 - Orders must start at `pending`
 - Status transitions are strictly linear: `pending → picked_up → out_for_delivery → delivered`
+
 
 ## What I'd Improve With More Time
 - Replace polling with WebSockets (Socket.io) for true real-time
