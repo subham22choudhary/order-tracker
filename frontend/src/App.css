@@ -164,3 +164,21 @@ button:disabled {
 .step.done .dot {
   background: #16a34a;
 }
+
+@media (max-width: 768px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .status-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}
