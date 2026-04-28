@@ -1,14 +1,13 @@
-// Valid statuses and their allowed transitions
 const VALID_STATUSES = ["pending", "picked_up", "out_for_delivery", "delivered"];
 
 const TRANSITIONS = {
     pending: ["picked_up"],
     picked_up: ["out_for_delivery"],
     out_for_delivery: ["delivered"],
-    delivered: [], // terminal state
+    delivered: [],
 };
 
-const orders = {}; // { orderId: { status, updatedAt } }
+const orders = {};
 
 function getOrder(orderId) {
     return orders[orderId] || null;
@@ -17,7 +16,6 @@ function getOrder(orderId) {
 function updateOrder(orderId, newStatus) {
     const existing = orders[orderId];
 
-    // If order exists, validate transition
     if (existing) {
         const allowed = TRANSITIONS[existing.status];
         if (!allowed.includes(newStatus)) {
@@ -26,7 +24,6 @@ function updateOrder(orderId, newStatus) {
             };
         }
     } else {
-        // New order must start at 'pending'
         if (newStatus !== "pending") {
             return { error: "New orders must start with status 'pending'" };
         }
