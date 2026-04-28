@@ -7,7 +7,7 @@ const STATUS_LABELS = {
     pending: "Pending",
     picked_up: "Picked Up",
     out_for_delivery: "Out for Delivery",
-    delivered: "Delivered ✅",
+    delivered: "Delivered",
 };
 
 export default function CustomerPanel() {
@@ -45,7 +45,6 @@ export default function CustomerPanel() {
         clearInterval(intervalRef.current);
     }
 
-    // Cleanup on unmount
     useEffect(() => () => clearInterval(intervalRef.current), []);
 
     const currentStep = orderData
@@ -54,7 +53,7 @@ export default function CustomerPanel() {
 
     return (
         <div className="panel">
-            <h2>📦 Customer Tracking</h2>
+            <h2>Customer Tracking</h2>
 
             <label>Order ID</label>
             <input
@@ -75,7 +74,7 @@ export default function CustomerPanel() {
             )}
 
             {tracking && !error && (
-                <p className="polling-note">🔄 Polling every 4 seconds...</p>
+                <p className="polling-note">Polling every 4 seconds...</p>
             )}
 
             {orderData && (
@@ -94,7 +93,7 @@ export default function CustomerPanel() {
                 </div>
             )}
 
-            {error && <p className="error">⚠️ {error}</p>}
+            {error && <p className="error">{error}</p>}
         </div>
     );
 }
