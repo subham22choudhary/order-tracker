@@ -1,5 +1,4 @@
-# Order Status Tracker
-
+# Mini Order Status (Mos) Tracker
 A real-time order tracking system with a Rider Panel and Customer Panel.
 
 ## How to Run Locally
@@ -32,9 +31,13 @@ npm test
 - Orders must start at `pending`
 - Status transitions are strictly linear: `pending → picked_up → out_for_delivery → delivered`
 
+
 ## What I'd Improve With More Time
 - Replace polling with WebSockets (Socket.io) for true real-time
 - Persist orders to Redis or a DB
 - Add JWT-based auth instead of hardcoded token
 - Add more unit/integration tests
 - Deploy via Docker Compose
+
+
+Vercel Live Testing URL: https://mos-tracker.vercel.app/
