@@ -1,5 +1,6 @@
 const { getOrder, updateOrder, isValidStatus } = require("./store");
 
+
 describe("isValidStatus", () => {
     test("returns true for valid statuses", () => {
         expect(isValidStatus("pending")).toBe(true);
@@ -11,6 +12,8 @@ describe("isValidStatus", () => {
         expect(isValidStatus("")).toBe(false);
     });
 });
+
+
 
 describe("updateOrder", () => {
     test("creates a new order with status pending", () => {
@@ -29,6 +32,7 @@ describe("updateOrder", () => {
         const result = updateOrder("order-002", "picked_up");
         expect(result.success).toBe(true);
     });
+
 
     test("rejects invalid transition delivered → pending", () => {
         updateOrder("order-003", "pending");
