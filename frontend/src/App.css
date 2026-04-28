@@ -20,6 +20,7 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.8rem;
+  color: #000;
 }
 
 .panels {
@@ -41,6 +42,7 @@ h1 {
 .panel h2 {
   font-size: 1.2rem;
   margin-bottom: 4px;
+  color: #000;
 }
 
 label {
@@ -63,18 +65,33 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
-  background: #4f46e5;
-  color: white;
   transition: background 0.2s;
 }
 
-button:hover {
-  background: #4338ca;
+button.pendingcta {
+  background-color: yellow;
+  color: #000;
 }
 
-button.active {
-  background: #16a34a;
+button.pickupcta {
+  background-color: #c5dca8;
+  color: #000;
 }
+
+button.dlvrycta {
+  background-color: #5bca5b;
+  color: #000;
+}
+
+button.deliveredcta {
+  background-color: #00ff00;
+  color: #000;
+}
+
+.track-btn {
+  background: #34d123;
+}
+
 
 button:disabled {
   opacity: 0.6;
@@ -85,14 +102,6 @@ button:disabled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-}
-
-.track-btn {
-  background: #0ea5e9;
-}
-
-.track-btn:hover {
-  background: #0284c7;
 }
 
 .stop-btn {
@@ -124,7 +133,6 @@ button:disabled {
   margin-top: 8px;
 }
 
-/* Progress Steps */
 .steps {
   display: flex;
   flex-direction: column;
